@@ -3,7 +3,7 @@
  * @Author: ZHANG ZHEN
  * @Date: 2021-06-16 22:28:47
  * @LastEditors: ZHANG ZHEN
- * @LastEditTime: 2021-06-16 22:36:34
+ * @LastEditTime: 2021-06-16 23:39:34
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,44 @@
         // 5.1 Date
         // 基本的日期对象
         let now = new Date();
+        //Date.parse() 接受一个表示日期的字符串参数，把字符串转化为该日期的毫秒数
+        let dateParse = Date.parse("06/16/2021");
+        let someDay = new Date(dateParse);
+        let timeStr = new Date("06/16/2021").getTime();
+        // console.log(`解析后的时间${ someDay } 时间的毫秒数${ dateParse } getTime获取的${ timeStr }`)
         
+        // Date.UTC() 返回的也是日期的毫秒数 但是必须要传入 年 第二个参数是月（起点： 0也就是1月）年月是必须的其他的全是0
+        // GMT 时间2021年6月17日
+        let y2k = new Date(Date.UTC(2021, 5, 17));
+        let allFull = new Date(Date.UTC(2021, 5, 17, 23, 2));
+        // console.log(`GMT时间零点${ y2k } 完整的时间${ allFull }`)
+
+        // Date.now()表示 执行时日期和时间的毫秒数
+        // 起始时间
+        function callMe() {
+            console.log('Go on')
+        }
+        let start = Date.now();
+        // callMe();
+        let stop = Date.now();
+        let result = stop - start;
+        // console.log(`时间差值${ result }`)
+
+        // 5.1.1 继承的方法
+        // 重写了 toLocaleString()、toString()、valueOf()
+        let localDate = new Date().toLocaleString();
+        let DateString = new Date().toString();
+        // console.log(`toLocaleString返回本地运行时间和日期${ localDate } toString返回时区信息的日期和时间通常是24小时${ DateString }`)
+        // 常用的还有如下
+        let Now = new Date();
+        let thisYear = Now.getFullYear();// 年
+        let thisMonth = Now.getMonth();// 月
+        let thisDay = Now.getDay();// 日
+        let thisHour = Now.getHours();// 小时
+        let thisMins = Now.getMinutes();// 分钟
+        let thisSec = Now.getSeconds(); //秒
+        let thisMiniSec = Now.getMilliseconds();// 毫秒
+        let thisTime = Now.getTime();// 时间毫秒数
     </script>
 </body>
 </html>
