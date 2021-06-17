@@ -1,0 +1,54 @@
+<!--
+ * @Description: 正则表达式
+ * @Author: ZHANG ZHEN
+ * @Date: 2021-06-17 23:07:14
+ * @LastEditors: ZHANG ZHEN
+ * @LastEditTime: 2021-06-17 23:44:25
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+<body>
+    <script type="text/javascript">
+         // g: 全局匹配 匹配字符所有的at
+        let pattern1 = /at/g;
+         // i：不区分大小写 匹配bat/cat ，忽略大小写
+         let pattern2 = /[bc]at/i;
+         // 匹配所有“at”结尾的字符组合，忽略大小写
+         let pattern3 = /.at/gi;
+         // 匹配所有的.at忽略大小写
+         let pattern4 = /\.at/gi;
+         /*console.log(`匹配字符所有的at: ${ pattern1.test('pattern') }`)
+         console.log(`不区分大小写 匹配bat/cat: ${ pattern2.test('cat') }`)
+         console.log(`匹配所有“at”结尾的字符组合，忽略大小写: ${ pattern3.test('pattern.at') }`)
+         console.log(`匹配所有的.at忽略大小写: ${ pattern4.test('.atpattern.at') }`)*/
+
+         // RegExp 函数表达式实例属性
+         /**
+          * global: Boolean, 表示是否设置过g标记
+          * ignoreCase: Boolean, 表示是否设置了i标记
+          * source： 正则表达式的字面变量，没有开头和结尾的斜杠返回两个斜杠前后的字符串
+          * flags: 正则表达式的标记字符串，返回斜杠之后的字符串
+          * 
+         */
+        let patterns = /\[bc]at/i;
+        // console.log(patterns.global, '是否设置了全局标志');
+        // console.log(patterns.ignoreCase, '是否设置了忽略');
+        // console.log(patterns.source, '斜杠反斜杠前后的字符');
+        // console.log(patterns.flags, '反斜杠后面的字符串')
+
+        // RegExp实例方法
+        
+
+
+
+    
+    
+    </script>
+</body>
+</html>
